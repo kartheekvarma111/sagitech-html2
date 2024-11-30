@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="about.css">
+    <style>
+        /* General Reset */
+        body, h1, h2, p, ul, li {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Style */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(to right, #ece9e6, #ffffff);
+        }
+
+        /* Header Style */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 20px 0 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Section */
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        main h2 {
+            margin-bottom: 10px;
+            color: #4CAF50;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        /* Table Styles */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        /* Footer Style */
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Online Store</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>About Us</h2>
+        <p>We are an online store committed to providing high-quality products and excellent customer service.</p>
+
+        <h2>Customer Information</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Email Id</th>
+                <th>Address</th>
+                <th>Phone No</th>
+            </tr>
+            <tr>
+                <td>John</td>
+                <td>john@gmail.com</td>
+                <td>US</td>
+                <td>021843484</td>
+            </tr>
+            <tr>
+                <td>Rahul</td>
+                <td>rahul@gmail.com</td>
+                <td>Pune</td>
+                <td>87348365676</td>
+            </tr>
+            <tr>
+                <td>Naincy</td>
+                <td>naincy@gmail.com</td>
+                <td>Hyderabad</td>
+                <td>76548787545</td>
+            </tr>
+        </table>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Online Store</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Online Store</title>
+    <style>
+        /* General Reset */
+        body, h1, h2, p, ul, li, a, input, button, label {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #ffffff, #f0f0f0);
+            margin: 0;
+            color: #333;
+        }
+
+        header {
+            background: #4CAF50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .advertisement {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .advertisement img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-category {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .product-category button {
+            padding: 10px 20px;
+            margin: 10px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .product-category button:hover {
+            background: #45a049;
+        }
+
+        .product-list {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-item {
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-item img {
+            max-width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .product-item h3 {
+            margin: 10px 0;
+            color: #4CAF50;
+        }
+
+        .product-item p {
+            color: #666;
+        }
+
+        /* Registration Form Styles */
+        #registration-form {
+            margin-top: 30px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #registration-form .form-group {
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        #registration-form label {
+            display: block;
+            font-weight: bold;
+        }
+
+        #registration-form input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .tooltip {
+            visibility: hidden;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin-top: 5px;
+            font-size: 0.8rem;
+            width: 200px;
+        }
+
+        input:focus + .tooltip {
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Online Store</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Advertisement -->
+        <div class="advertisement">
+            <img src="add1.jpg" alt="Advertisement">
+        </div>
+
+        <!-- Product Categories -->
+        <h2>Select a Product Category</h2>
+        <div class="product-category">
+            <button onclick="showProducts('tv')">TV</button>
+            <button onclick="showProducts('laptop')">Laptop</button>
+            <button onclick="showProducts('fridge')">Fridge</button>
+            <button onclick="showProducts('phone')">Phone</button>
+        </div>
+        <div id="product-list" class="product-list">
+            <p>Select a category to view products.</p>
+        </div>
+
+        <!-- Registration Form -->
+        <h2>Register as a Customer</h2>
+        <form id="registration-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" required>
+                <div class="tooltip">Enter your full name</div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+                <div class="tooltip">Enter a valid email address</div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+                <div class="tooltip">Password must be at least 8 characters</div>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" id="address" required>
+                <div class="tooltip">Enter your full address</div>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Online Store. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+         const products = {
+            tv: [
+                {
+                    name: "Samsung TV",
+                    description: "Stunning 4K UHD with smart features.",
+                    image: "tv.jpg"
+                },
+                {
+                    name: "LG Smart TV",
+                    description: "Immersive visuals with AI-powered enhancements.",
+                    image: "lgtv.jpg"
+                }
+            ],
+            laptop: [
+                {
+                    name: "Dell XPS",
+                    description: "Powerful performance with sleek design.",
+                    image: "dellxp.jpg"
+                },
+                {
+                    name: "MacBook Pro",
+                    description: "Best-in-class display and top-tier performance.",
+                    image: "mac.jpg"
+                }
+            ],
+            fridge: [
+                {
+                    name: "Whirlpool Fridge",
+                    description: "Energy-efficient with large capacity.",
+                    image: "whifridge.jpg"
+                },
+                {
+                    name: "Samsung Refrigerator",
+                    description: "Smart cooling technology with WiFi.",
+                    image: "samfridge.jpg"
+                }
+            ],
+            phone: [
+                {
+                    name: "iPhone 16",
+                    description: "Revolutionary camera system with sleek design.",
+                    image: "iphone.jpg"
+                },
+                {
+                    name: "Samsung Galaxy S24",
+                    description: "Cutting-edge features and performance.",
+                    image: "s24.jpg"
+                }
+            ]
+        };
+
+        function showProducts(category) {
+            const productList = document.getElementById('product-list');
+            productList.innerHTML = '';
+
+            if (products[category]) {
+                products[category].forEach(product => {
+                    const productItem = document.createElement('div');
+                    productItem.className = 'product-item';
+
+                    const productImage = document.createElement('img');
+                    productImage.src = product.image;
+                    productImage.alt = product.name;
+
+                    const productName = document.createElement('h3');
+                    productName.textContent = product.name;
+
+                    const productDescription = document.createElement('p');
+                    productDescription.textContent = product.description;
+
+                    productItem.appendChild(productImage);
+                    productItem.appendChild(productName);
+                    productItem.appendChild(productDescription);
+                    productList.appendChild(productItem);
+                });
+            } else {
+                productList.innerHTML = '<p>No products available in this category.</p>';
+            }
+        }
+    </script>
+</body>
+</html>
